@@ -1,0 +1,6 @@
+<resources>
+
+    <style name="Theme.Lunalauncher" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+</resources>
