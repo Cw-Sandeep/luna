@@ -53,6 +53,9 @@ android {
 
 dependencies {
 
+    implementation(libs.ccompanist.accompanist)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.timber)
     implementation(libs.logging.interceptor)
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
@@ -86,9 +89,6 @@ dependencies {
     // JSON parser
     implementation(libs.kotlinx.serialization)
 
-    // Media3
-    implementation(libs.androidx.media3.exoplayer)
-    implementation(libs.androidx.media3.ui)
 
     // Hilt
     implementation(libs.hilt.android)

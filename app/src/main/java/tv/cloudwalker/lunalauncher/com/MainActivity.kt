@@ -2,21 +2,13 @@ package tv.cloudwalker.lunalauncher.com
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.OnBackPressedDispatcher
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.tv.material3.ExperimentalTvMaterial3Api
-import androidx.tv.material3.Surface
 import dagger.hilt.android.AndroidEntryPoint
 import tv.cloudwalker.lunalauncher.com.screens.MainScreen
 import tv.cloudwalker.lunalauncher.com.ui.theme.LunalauncherTheme
+import tv.cloudwalker.lunalauncher.com.utils.SkinResource
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -25,7 +17,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             LunalauncherTheme {
-                    MainScreen()
+                val skinResource = SkinResource(this)
+                    MainScreen(
+                        skinResource,applicationContext,OnBackPressedDispatcher::onBackPressed)
 
             }
         }
